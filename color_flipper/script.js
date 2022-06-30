@@ -1,17 +1,18 @@
 //... green, red, rgba color and hex color
-const colors = ["green", "red", "rgba(133,122,200)", "#f15025"]
-const btn = document.getElementById('btn')
-const color = document.querySelector('.color')
+const colors = ["purple", "orange", "rgba(133,122,200)", "#f16025"]
+const myBtn = document.getElementById("btn")
+const color = document.querySelector(".color")
 
-btn.addEventListener('click', function(){
-    // console.log(document.body)
+myBtn.addEventListener("click", function(){
+     // console.log(document.body)
     //..get random number between 0 - 3 i.e the index of the colors array
-    const randomNumber = getRandomNumber() //..invoking the getRandomNumber function
-    document.body.style.backgroundColor = colors[randomNumber]
-    color.textContent = colors[randomNumber]
+    const getRandomNumber = randomNumber() //..invoking the getRandomNumber function
+   // console.log(randomNumber)
+    document.body.style.backgroundColor = colors[getRandomNumber]
+    color.textContent = colors[getRandomNumber]
 })
 
-//..generate randomNumber between 0 - 3 in the colors array 
-function getRandomNumber(){
+function randomNumber(){
+ return Math.floor(Math.random() * colors.length) //..using floor to approximate the math value to the nearest number in the array
 
 }
