@@ -66,10 +66,16 @@ function getPersonData(person){
 
 nextBtn.addEventListener('click', function(){
   currentItem++
+  if(currentItem > reviews.length - 1){ //..check if the number of data in the array then return to the first else we get an error 
+      currentItem = 0 //..return to the first value
+  }
   getPersonData(currentItem)
 })
 
 prevBtn.addEventListener("click", function(){
   currentItem--
+  if(currentItem < 0){
+      currentItem = reviews.length - 1
+  }
   getPersonData(currentItem)
 })
