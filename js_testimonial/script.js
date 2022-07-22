@@ -53,10 +53,23 @@ let currentItem = 0
 
 //..load initial item
 window.addEventListener("DOMContentLoaded", function(){
-  console.log("loaded")
-  const getItem = reviews[currentItem] //..array of users data 
-  img.src  = getItem.img
+  getPersonData(currentItem)
+})
+
+function getPersonData(person){
+  const getItem = reviews[person]
+  img.src = getItem.img 
   author.textContent = getItem.name
   job.textContent = getItem.job
   info.textContent = getItem.text
+}
+
+nextBtn.addEventListener('click', function(){
+  currentItem++
+  getPersonData(currentItem)
+})
+
+prevBtn.addEventListener("click", function(){
+  currentItem--
+  getPersonData(currentItem)
 })
