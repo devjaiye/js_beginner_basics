@@ -56,6 +56,7 @@ window.addEventListener("DOMContentLoaded", function(){
   getPersonData(currentItem)
 })
 
+//..function containing the data of each person
 function getPersonData(person){
   const getItem = reviews[person]
   img.src = getItem.img 
@@ -72,10 +73,17 @@ nextBtn.addEventListener('click', function(){
   getPersonData(currentItem)
 })
 
+//..when the previous button is clicked 
 prevBtn.addEventListener("click", function(){
   currentItem--
   if(currentItem < 0){
       currentItem = reviews.length - 1
   }
   getPersonData(currentItem)
+})
+
+//...show random person with
+randomBtn.addEventListener("click", function(){
+    currentItem = Math.floor(Math.random() * reviews.length)
+    getPersonData(currentItem)
 })
