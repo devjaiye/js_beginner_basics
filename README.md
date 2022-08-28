@@ -1,3 +1,3 @@
-# js_beginner_basics
+# JS Beginner Projects 
 
 This repository contains a list of beginner friendly JavaScript projects
